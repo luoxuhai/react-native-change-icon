@@ -13,7 +13,7 @@ import com.facebook.react.bridge.Promise
 
 class ChangeIconModule(reactContext: ReactApplicationContext, private val packageName: String) : ReactContextBaseJavaModule(reactContext), Application.ActivityLifecycleCallbacks {
     private var classesToKill: MutableList<String> = mutableListOf<String>()
-    private var iconChanged: Boolean = false;
+    private var iconChanged: Boolean = false
     private var componentClass: String = ""
     override fun getName(): String {
         return "ChangeIcon"
@@ -41,7 +41,7 @@ class ChangeIconModule(reactContext: ReactApplicationContext, private val packag
         classesToKill.add(componentClass)
         componentClass = activeClass
         activity.application.registerActivityLifecycleCallbacks(this)
-        iconChanged = true;
+        iconChanged = true
     }
 
     private fun completeIconChange() {
@@ -58,12 +58,12 @@ class ChangeIconModule(reactContext: ReactApplicationContext, private val packag
             )
           }
           classesToKill.clear()
-          iconChanged = false;
+          iconChanged = false
         }
     }
 
     override fun onActivityPaused(activity: Activity) {
-        completeIconChange();
+        completeIconChange()
     }
 
     override fun onActivityCreated(activity: Activity, savedInstanceState: Bundle?) {

@@ -9,13 +9,11 @@ Pod::Spec.new do |s|
   s.homepage     = package["homepage"]
   s.license      = package["license"]
   s.authors      = package["author"]
-  s.license      = "MIT"
-  s.license      = { :type => "MIT", :file => "LICENSE" }
+
   s.platforms    = { :ios => "9.0" }
-  s.source       = { :git => "#{package["repository"]}.git", :tag => "#{s.version}" }
+  s.source       = { :git => "https://github.com/skb1129/react-native-change-icon.git", :tag => "#{s.version}" }
 
   s.source_files = "ios/**/*.{h,m,mm,swift}"
-  s.requires_arc = true
 
-  s.dependency "React"
+  s.dependency "React-Core"
 end
